@@ -5,20 +5,20 @@
             <form id="burger-form" @submit="createBurger">
                 <div class="input-container">
                     <label for="nome">Nome do cliente:</label>
-                    <input type="text" id="nome" name="name" v-model="nome" placeholder="Digite seu nome">
+                    <input required type="text" id="nome" name="name" v-model="nome" placeholder="Digite seu nome">
                 </div>
                 <div class="input-container">
                     <label for="pao">Escolha o pao:</label>
-                    <select name="pao" id="pao" v-model="pao" >
+                    <select name="pao" id="pao" v-model="pao" required >
                         <option value="">Selecione o seu pão</option>
                         <option v-for="pao in paes" :key="pao.id" :value="pao.tipo"> {{ pao.tipo }} </option>
                     </select>
                 </div>
                 <div class="input-container">
                     <label for="carne">Escolha o carne do seu burger:</label>
-                    <select name="carne" id="carne" v-model="carne">
+                    <select name="carne" id="carne" v-model="carne" required>
                         <option value="">Selecione o seu tipo de carne:</option>
-                        <option  v-for="carne in carnes" :key="carne.id" :value="carne.tipo"> {{ carne.tipo }}</option>
+                        <option v-for="carne in carnes" :key="carne.id" :value="carne.tipo"> {{ carne.tipo }}</option>
                     </select>
                 </div>
                 <div id="opcionais-container" class="input-container">
