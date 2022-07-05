@@ -1,7 +1,7 @@
 <template>
-    <section>
-        <p>Footer</p>
-    </section>
+    <footer id="footer">
+        <p> Make Your Burger &copy; 2022</p>
+    </footer>
 </template>
 <script>
 export default {
@@ -10,5 +10,14 @@ export default {
 </script>
 
 <style scoped>
-
+#footer{
+    height: 200px;
+    width: 100%;
+    background-color: #222;
+    border-top: 4px solid #111;
+    color: #FCBA03;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
 </style>
