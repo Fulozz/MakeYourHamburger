@@ -77,5 +77,30 @@
       "tipo": "Finalizado"
     }
   ],
-  "burgers": [ ]
+  "burgers": [
+    {
+      "nome": "Thiago ",
+      "carne": "Picanha",
+      "pao": "Parmesão e Orégano",
+      "opcionais": [
+        "Bacon",
+        "Salame",
+        "Cebola roxa"
+      ],
+      "status": "Solicitado",
+      "id": 1
+    },
+    {
+      "nome": "Thiago Silva Andrade",
+      "carne": "Veggie burger",
+      "pao": "Integral",
+      "opcionais": [
+        "Bacon",
+        "Salame",
+        "Cebola roxa"
+      ],
+      "status": "Solicitado",
+      "id": 2
+    }
+  ]
 }
