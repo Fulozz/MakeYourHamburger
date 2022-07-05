@@ -10,14 +10,12 @@
                 <div class="input-container">
                     <label for="pao">Escolha o pao:</label>
                     <select name="pao" id="pao" v-model="pao" required >
-                        <option value="">Selecione o seu pão</option>
                         <option v-for="pao in paes" :key="pao.id" :value="pao.tipo"> {{ pao.tipo }} </option>
                     </select>
                 </div>
                 <div class="input-container">
                     <label for="carne">Escolha o carne do seu burger:</label>
                     <select name="carne" id="carne" v-model="carne" required>
-                        <option value="">Selecione o seu tipo de carne:</option>
                         <option v-for="carne in carnes" :key="carne.id" :value="carne.tipo"> {{ carne.tipo }}</option>
                     </select>
                 </div>
@@ -39,7 +37,7 @@
     </section>
 </template>
 <script>
-import Message from './Message.vue';
+import Message from '../Messages/Message.vue';
 
 export default {
     name: 'BurgerForm',
@@ -89,7 +87,7 @@ export default {
             console.log(res)
 
             //colocar mensagem de sistema
-            this.msg = `Pedido Nº ${res.id} realizado com sucess` 
+            this.msg = `Pedido Nº ${res.id} realizado com sucesso` 
             
             //limpar mensagem
             setTimeout(() => this.msg = "", 3000)
@@ -98,7 +96,7 @@ export default {
             this.nome = "";
             this.carne = "";
             this.pao = "";
-            this.opcionais = "";
+            this.opcionais = '';
 
          }   
     },

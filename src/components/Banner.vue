@@ -14,9 +14,9 @@ export default {
 <style scoped>
     #main-banner{
         background-image: url('/public/img/burger.jpg');
-        background-position: right bottom -250px;
+        background-position: right bottom -400px;
         background-size: cover;
-        height: 700px;
+        height: 400px;
         width: auto;
         display: flex;
         align-items: center;
@@ -28,5 +28,8 @@ export default {
         font-size: 60px;
         background-color: rgba(34, 34, 34,0.6);
         padding: 20px 40px;
+    }
+    @media screen and (min-width: 1024px) {
+        
     }
 </style>

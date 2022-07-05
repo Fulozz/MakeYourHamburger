@@ -3,7 +3,13 @@
         <router-link to="/">
         <img :src="logo" :alt="alt" id="logo">
         </router-link>
-        <div id="link">
+        
+            <div class="hamburger-btn">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            <div id="link">
         <router-link to="/">Home</router-link> 
         <router-link to="/pedidos">Pedidos</router-link>
     </div>
@@ -39,5 +45,12 @@ export default {
     }
     #nav a:hover{
         color: #FFF
+    }
+
+    @media screen (max-width: 1024px) {
+        #link{
+            display: none;
+        }
+        
     }
 </style>

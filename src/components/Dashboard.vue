@@ -10,6 +10,11 @@
                 <div>Ações:</div>
             </div>
         </div>
+
+        <MessageCancel :msg="msgCancel" v-show="msgCancel" />
+        <MessageUpdate :msg="msgUpdate" v-show="msgUpdate" />
+
+
         <div id="burger-table-rows">
             <div class="burger-table-row" v-for="burger in burgers" :key="burger.id" >
                 <div class="order-number">{{ burger.id }}</div>
@@ -24,8 +29,8 @@
                     </ul>
                 </div>
                 <div>
-                        <select name="stauts" class="status">
-                            <option v-for="s in status" :key="s.id" value="s.tipo" :selected="burger.status == s.tipo">
+                        <select name="stauts" class="status" @change="updateBurger($event, burger.id)">
+                            <option v-for="s in status" :key="s.id" :value="s.tipo" :selected="burger.status == s.tipo">
                                 {{ s.tipo }}
                             </option>
                         </select>
@@ -38,16 +43,27 @@
 </template>
 
 <script>
+import MessageUpdate from '@/Messages/MessageUpdate.vue';
+
+import MessageCancel from '../Messages/MessageCancel.vue';
+
 export default {
+  components: { MessageCancel, MessageUpdate },
     name: 'Dashboard',
     data(){
         return{
             burgers: null,
             burger_id: null,
             status: [],
+            msg: null,
+            msgCancel: null,
+            msgUpdate: null,
+
         }
     },
     methods: {
+
+        //Pedidos request
         async getPedidos(){
             const req = await fetch("http://localhost:3000/burgers");
 
@@ -61,6 +77,8 @@ export default {
 
 
         },
+
+        //status request
         async getStatus(){
 
             const req = await fetch("http://localhost:3000/status");
@@ -69,18 +87,45 @@ export default {
 
             this.status = data 
         },
-        async deleteBurger(id) {
 
+        //delete function
+        async deleteBurger(id) {
+            
             const req = await fetch(`http://localhost:3000/burgers/${id}`, {
                 method: "DELETE"
             });
             const res = await req.json();
 
-            //msg
+            //mensagem
+            this.msgCancel = `Pedido cancelado com sucesso!` 
+            setTimeout(() => this.msgCancel = "", 3000); 
 
-            this.getPedidos();  //atualizar os pedidos
 
+            //atualizar os pedidos
+            this.getPedidos();  
+        },
+
+        async updateBurger(event, id) {
+            const option = event.target.value;
+
+            const dataJson = JSON.stringify({ status : option});
+
+            const req = await fetch(`http://localhost:3000/burgers/${id}`, {
+                method: "PATCH",
+                headers: { "Content-Type" : "application/json" },
+                body: dataJson,
+            });
+
+            const res = await req.json();
+            
+                         //mensagem
+            this.msgUpdate = `O pedido Nº ${res.id} foi atualizado para ${res.status}!` 
+            setTimeout(() => this.msgUpdate = "", 3000); 
+
+
+            // console.log(res)
         }
+
     },
     mounted(){
         this.getPedidos();

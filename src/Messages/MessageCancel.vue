@@ -6,7 +6,7 @@
 
 <script>
 export default {
-    name: 'Message',
+    name: 'MessageCancel',
     props: {
         msg : String
     }
@@ -15,12 +15,13 @@ export default {
 
 <style scoped>
     .message-container{
-        color: #004085;;
-        background-color: #ccE5FF;
-        border: 2px solid #B8DAFF;
+        color: #8b0000;
+        background-color: #FA8072;
+        border: 2px solid #DC143C;
         border-radius: 5px;
         padding: 10px;
-        max-width: 400px;
+        margin-right: auto;
+        max-width: 400px ;
         margin: 30px auto;
     }
 </style>
