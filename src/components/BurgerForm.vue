@@ -24,7 +24,7 @@
                 <div id="opcionais-container" class="input-container">
                     <label for="opcionais" id="opcionais-title">Selecione os opicionais</label>
                     <div class="checkbox-container" v-for="opcional in opcionaisData" :key="opcional.id" >
-                        <input type="checkbox" name="opcionais" v-model="opcionais" :value="opcional">
+                        <input type="checkbox" name="opcionais" v-model="opcionais" :value="opcional.tipo">
                         <span>{{ opcional.tipo }}</span>
                     </div>
  
@@ -49,8 +49,7 @@ export default {
             nome: null,
             pao: null,
             carne: null,
-            opcional: [],
-            status: "Solicitado",
+            opcionais: [],
             msg: null,
         }
     },
@@ -65,7 +64,36 @@ export default {
         },
          async createBurger(e){
             e.preventDefault();
-            console.log("Criou o Hamburger")
+
+            const data ={
+                nome: this.nome,
+                carne: this.carne,
+                pao: this.pao,
+                opcionais: Array.from(this.opcionais),
+                status: "Solicitado",
+            }
+            const dataJson = JSON.stringify(data);
+            const req = await fetch("http://localhost:3000/burgers",{
+                method: "POST",
+                headers: {"Content-Type" : "application/json" },
+                body: dataJson
+            });
+
+            const res = await req.json()
+
+            console.log(res)
+
+            //colocar mensagem de sistema
+
+            //limpar mensagem
+
+            //limpar os campos
+
+            this.nome = "";
+            this.carne = "";
+            this.pao = "";
+            this.opcionais = "";
+
          }   
     },
     mounted(){
