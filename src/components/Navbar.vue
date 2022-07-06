@@ -3,15 +3,32 @@
         <router-link to="/">
         <img :src="logo" :alt="alt" id="logo">
         </router-link>
-        
-            <div class="hamburger-btn">
-                <span></span>
-                <span></span>
-                <span></span>
+
+        <div id="responsive">
+            
+         <div id="menu-overlay" v-if="menuActive"></div>
+
+         <div id="menu-items" :class="{isActive:menuActive}">
+            
+            <ul>
+                <img :src="logo" :alt="alt" id="logo">
+                <li><router-link to="/">Home</router-link></li>
+                <li><router-link to="/pedidos">Pedidos</router-link></li>       
+            </ul>
+         </div>
+            
+            <label for="checkbox" class="hamburger" @click="closeMenu()">
+                <input type="checkbox" id="checkbox">
+                <span class="line line--top"></span>
+                <span class="line line--middle"></span>
+                <span class="line line--bottom"></span>
+            </label>
             </div>
+
             <div id="link">
         <router-link to="/">Home</router-link> 
         <router-link to="/pedidos">Pedidos</router-link>
+       
     </div>
   </section>
 </template>
@@ -19,7 +36,20 @@
 <script>
 export default {
     name: "Navbar",
-    props: ["logo", "alt"]
+    props: ["logo", "alt"],
+    data(){
+        return{
+            menuActive: true,
+        }
+    },
+    methods:{
+        openMenu: function(){
+            this.menuActive = true
+        },
+        closeMenu: function(){
+            this.menuActive = false
+        }
+    }
 }
 </script>
 
@@ -47,10 +77,112 @@ export default {
         color: #FFF
     }
 
-    @media screen (max-width: 1024px) {
+    #checkbox {
+        display: none;
+    }
+
+
+   /* Responsividade */
+
+    @media screen and (max-width: 1024px) {
+        
+        #responsive img{
+            position: relative;
+            top: 20px;
+            margin-bottom: 10px ;
+            right: -20px
+        }
+        
+        #menu-overlay{
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 40%;
+            height: 100vh;
+            background-color: #000;
+            opacity: 0.8;
+        }
+
+        #menu-items{
+            position: fixed;
+            top: 0;
+            right: 0;
+            background-color: #222;
+            width: 60%;
+            height: 100vh;
+            display: none;
+            flex-direction: column;
+            justify-content: flex-start;
+            align-items: center;
+        }
+        
+        #nav #menu-items .isActive{
+            display: flex;
+        }
+
+        ul {
+            list-style: none;
+        }
+        #logo{
+            margin-top: 30px;
+            margin-bottom: 10px;
+        }
+
+        ul li {
+            text-align: center;
+            margin-top: 30px;
+            font-size: 18px;
+            font-weight: bold;
+        }
+
+
+
+
+
+        /* Navbar Hamburger*/
         #link{
             display: none;
         }
-        
+        #checkbox{
+            display: none;
+        }
+
+        .hamburger {
+            position: relative;
+            padding: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+        }
+        .line{
+            position: absolute;
+            width: 25px;
+            height: 3px;
+            background-color: #fff;
+            border-radius: 3px;
+            transition: transform .25s, opacity .35s;
+        }
+        .line--top{
+            transform: translateY(-7px);
+        }
+        .line--bottom{
+            transform: translateY(7px);
+        }
+
+        #checkbox:checked ~ .line--top{
+            transform: translateX(16px);
+            opacity: 0;
+        }
+        #checkbox:checked ~ .line--middle{
+            transform: translateX(16px);
+            opacity: 0;
+        }
+        #checkbox:checked ~ .line--bottom{
+            transform: translateX(16px);
+            opacity: 0;
+        }
+       
+
     }
 </style>
