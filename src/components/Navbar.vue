@@ -94,7 +94,9 @@ export default {
         display: none;
     }
 
-
+    #menu-items{
+        display: none
+    }
    /* Responsividade */
 
     @media screen and (max-width: 1024px) {
