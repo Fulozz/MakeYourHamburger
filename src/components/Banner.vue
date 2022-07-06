@@ -24,9 +24,9 @@ export default {
     }
     #main-banner > h1{
         color: #fff;
-        text-align: center;
+        text-align: left;
         font-size: 60px;
-        background-color: rgba(34, 34, 34,0.6);
+        background-color: rgba(34, 34, 34,0.1);
         padding: 20px 40px;
     }
     @media screen and (min-width: 1024px) {

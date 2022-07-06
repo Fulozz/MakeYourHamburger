@@ -16,8 +16,8 @@
             </ul>
          </div>
             
-            <label for="checkbox" class="hamburger" @click=" openMenu($event)">
-                <input type="checkbox" id="checkbox">
+            <label for="checkbox" class="hamburger" @click="openMenu($event)">
+                <input type="checkbox" id="checkbox" >
                 <span class="line line--top"></span>
                 <span class="line line--middle"></span>
                 <span class="line line--bottom"></span>
@@ -33,6 +33,7 @@
 </template>
 
 <script>
+
 export default {
     name: "Navbar",
     props: ["logo", "alt"],
@@ -45,25 +46,15 @@ export default {
     methods:{
         openMenu: function(){
             this.menuActive = true
+            
         },
         closeMenu: function(){
             this.menuActive = false
         },
-    },
-    async openMenu(e){
-        e.preventDefault();
-
-        $(".hamburger").each(
-            function(){
-                if ($(this).prop("checked")){
-                    $(this).prop("menuActive", true);
-                } else {
-                    $(this).prop("menuActive", false)
-                }
-            }
-        )
-    }
+    }, 
 }
+
+
 </script>
 
 <style scoped>

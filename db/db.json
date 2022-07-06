@@ -101,6 +101,18 @@
       ],
       "status": "Solicitado",
       "id": 7
+    },
+    {
+      "nome": "876885435",
+      "carne": "Alcatra",
+      "pao": "Italiano Branco",
+      "opcionais": [
+        "Bacon",
+        "Salame",
+        "Cebola roxa"
+      ],
+      "status": "Solicitado",
+      "id": 8
     }
   ]
 }
