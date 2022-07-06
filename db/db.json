@@ -79,18 +79,6 @@
   ],
   "burgers": [
     {
-      "nome": "André",
-      "carne": "Picanha",
-      "pao": "Italiano Branco",
-      "opcionais": [
-        "Bacon",
-        "Tomate",
-        "Pepino"
-      ],
-      "status": "Em produção",
-      "id": 5
-    },
-    {
       "nome": "Thiago Silva Andrade",
       "carne": "Alcatra",
       "pao": "3 Queijos",
@@ -99,7 +87,7 @@
         "Salame",
         "Tomate"
       ],
-      "status": "Solicitado",
+      "status": "Em produção",
       "id": 6
     },
     {

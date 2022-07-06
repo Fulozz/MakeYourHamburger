@@ -6,18 +6,17 @@
 
         <div id="responsive">
             
-         <div id="menu-overlay" v-if="menuActive"></div>
+         <div id="menu-overlay" v-if="menuActive" @click="closeMenu"></div>
 
-         <div id="menu-items" :class="{isActive:menuActive}">
-            
+         <div id="menu-items" :class="{ active:menuActive }">
+            <img :src="logo" :alt="alt" id="logo">
             <ul>
-                <img :src="logo" :alt="alt" id="logo">
                 <li><router-link to="/">Home</router-link></li>
                 <li><router-link to="/pedidos">Pedidos</router-link></li>       
             </ul>
          </div>
             
-            <label for="checkbox" class="hamburger" @click="closeMenu()">
+            <label for="checkbox" class="hamburger" @click=" openMenu($event)">
                 <input type="checkbox" id="checkbox">
                 <span class="line line--top"></span>
                 <span class="line line--middle"></span>
@@ -39,7 +38,8 @@ export default {
     props: ["logo", "alt"],
     data(){
         return{
-            menuActive: true,
+            menuActive: false,
+            
         }
     },
     methods:{
@@ -48,7 +48,20 @@ export default {
         },
         closeMenu: function(){
             this.menuActive = false
-        }
+        },
+    },
+    async openMenu(e){
+        e.preventDefault();
+
+        $(".hamburger").each(
+            function(){
+                if ($(this).prop("checked")){
+                    $(this).prop("menuActive", true);
+                } else {
+                    $(this).prop("menuActive", false)
+                }
+            }
+        )
     }
 }
 </script>
@@ -90,7 +103,7 @@ export default {
             position: relative;
             top: 20px;
             margin-bottom: 10px ;
-            right: -20px
+            right: 0px
         }
         
         #menu-overlay{
@@ -116,7 +129,7 @@ export default {
             align-items: center;
         }
         
-        #nav #menu-items .isActive{
+        #menu-items.active{
             display: flex;
         }
 
@@ -171,16 +184,14 @@ export default {
         }
 
         #checkbox:checked ~ .line--top{
-            transform: translateX(16px);
-            opacity: 0;
+            transform: rotate(45deg);
         }
         #checkbox:checked ~ .line--middle{
             transform: translateX(16px);
             opacity: 0;
         }
         #checkbox:checked ~ .line--bottom{
-            transform: translateX(16px);
-            opacity: 0;
+            transform: rotate(-45deg);
         }
        
 
