@@ -6,7 +6,7 @@
 
         <div id="responsive">
             
-         <div id="menu-overlay" v-if="menuActive" @click="closeMenu"></div>
+         <div id="menu-overlay" v-if="menuActive" @click="closeMenu($event)"></div>
 
          <div id="menu-items" :class="{ active:menuActive }">
             <img :src="logo" :alt="alt" id="logo">
@@ -16,7 +16,8 @@
             </ul>
          </div>
             
-            <label for="checkbox" class="hamburger" @click="openMenu($event)" >
+            <label for="checkbox" class="hamburger" @click="menuFunctions($events)" >
+                <input type="checkbox" id="checkbox">
                 <span class="line line--top"></span>
                 <span class="line line--middle"></span>
                 <span class="line line--bottom"></span>
@@ -43,15 +44,29 @@ export default {
         }
     },
     methods: {
-        openMenu: function(){
-            this.menuActive = true;
+        //Para chamar função usar o menuFunctions($event)
+        
+         menuFunctions: function(e){
+        var checkBox = document.getElementById("checkbox");
+            if (checkBox.checked == true){
+                this.menuActive = true;
+            } else {
+                this.menuActive = false;
+            }
         },
-        closeMenu: function(){
-            this.menuActive = false;
-        }
+        closeMenu: function(e){
+            var checkBox = document.getElementById("checkbox").checked = false;
+            if( checkBox.checked == false){
+                this.menuActive = false;
+            } else {
+                this.menuActive = false
+            }
+        },
 
     
-    }
+    },
+
+
 }
 
 
@@ -61,7 +76,7 @@ export default {
     #nav {
         background-color: #222;
         border-bottom: 4px solid #111;
-        padding: 15px 50px;
+        padding: 5px 50px;
         display: flex;
         justify-content: space-between;
         align-items: center;
@@ -90,7 +105,7 @@ export default {
     }
    /* Responsividade */
 
-    @media screen and (max-width: 1024px) {
+    @media screen and (max-width: 600px) {
         
         #responsive img{
             position: relative;

@@ -79,40 +79,15 @@
   ],
   "burgers": [
     {
-      "nome": "Thiago Silva Andrade",
-      "carne": "Alcatra",
-      "pao": "3 Queijos",
-      "opcionais": [
-        "Bacon",
-        "Salame",
-        "Tomate"
-      ],
-      "status": "Em produção",
-      "id": 6
-    },
-    {
-      "nome": "Thiago Silva Andrade",
-      "carne": "Picanha",
-      "pao": "3 Queijos",
-      "opcionais": [
-        "Bacon",
-        "Salame",
-        "Pepino"
-      ],
-      "status": "Solicitado",
-      "id": 7
-    },
-    {
-      "nome": "876885435",
+      "nome": "Joao Madoka Magica",
       "carne": "Alcatra",
       "pao": "Italiano Branco",
       "opcionais": [
         "Bacon",
-        "Salame",
         "Cebola roxa"
       ],
-      "status": "Solicitado",
-      "id": 8
+      "status": "Finalizado",
+      "id": 1
     }
   ]
 }

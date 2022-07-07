@@ -20,7 +20,7 @@
                     </select>
                 </div>
                 <div id="opcionais-container" class="input-container">
-                    <label for="opcionais" id="opcionais-title">Selecione os opicionais</label>
+                    <label for="opcionais" id="opcionais-title">Selecione os opcionais</label>
                     <div class="checkbox-container" v-for="opcional in opcionaisData" :key="opcional.id" >
                         <input type="checkbox" name="opcionais" v-model="opcionais" :value="opcional.tipo">
                         <span>{{ opcional.tipo }}</span>
@@ -162,7 +162,8 @@ export default {
         font-size: 16px;
         margin: 0 auto;
         cursor: pointer;
-        transition: .5s
+        transition: .5s;
+        border-radius: 5px;
     }
 
     .submit-btn:hover{
