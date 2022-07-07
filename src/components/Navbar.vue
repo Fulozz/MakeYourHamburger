@@ -16,8 +16,7 @@
             </ul>
          </div>
             
-            <label for="checkbox" class="hamburger" @click="openMenu($event)">
-                <input type="checkbox" id="checkbox" >
+            <label for="checkbox" class="hamburger" @click="openMenu($event)" >
                 <span class="line line--top"></span>
                 <span class="line line--middle"></span>
                 <span class="line line--bottom"></span>
@@ -43,15 +42,16 @@ export default {
             
         }
     },
-    methods:{
+    methods: {
         openMenu: function(){
-            this.menuActive = true
-            
+            this.menuActive = true;
         },
         closeMenu: function(){
-            this.menuActive = false
-        },
-    }, 
+            this.menuActive = false;
+        }
+
+    
+    }
 }
 
 
