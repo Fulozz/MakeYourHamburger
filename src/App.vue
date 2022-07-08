@@ -11,6 +11,7 @@ import Navbar from './components/Navbar.vue'
 import Footer from './components/Footer.vue'
 
 export default {
+  name: 'App',
   components: { 
     Navbar,
     Footer
@@ -26,6 +27,15 @@ export default {
 </script>
 
 <style>
+    ::-webkit-scrollbar {
+        width: 6px;
+        border-left: 1px solid #E6ECF8;
+    }
+
+    ::-webkit-scrollbar-thumb {
+        background-color: var(--dark-navy);
+        cursor: grab;
+    }
     *{
       font-family: Helvetica;
       padding: 0;

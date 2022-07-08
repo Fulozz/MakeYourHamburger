@@ -46,8 +46,8 @@ export default {
     methods: {
         //Para chamar função usar o menuFunctions($event)
         
-         menuFunctions: function(e){
-        var checkBox = document.getElementById("checkbox");
+        menuFunctions: function(e){
+            var checkBox = document.getElementById("checkbox");
             if (checkBox.checked == true){
                 this.menuActive = true;
             } else {
@@ -61,15 +61,9 @@ export default {
             } else {
                 this.menuActive = false
             }
-        },
-
-    
+        },   
     },
-
-
 }
-
-
 </script>
 
 <style scoped>
