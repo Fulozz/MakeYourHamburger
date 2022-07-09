@@ -11,7 +11,7 @@ export default {
 
 <style scoped>
 #footer{
-    height: 100px;
+    height: 150px;
     width: 100%;
     background-color: #222;
     border-top: 4px solid #111;
@@ -23,4 +23,3 @@ export default {
 </style>
 
 
-//
