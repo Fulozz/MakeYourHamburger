@@ -79,14 +79,13 @@
   ],
   "burgers": [
     {
-      "nome": "Joao Madoka Magica",
-      "carne": "Alcatra",
+      "nome": "PokiHenrico Asi'han Yang",
+      "carne": "Veggie burger",
       "pao": "Italiano Branco",
       "opcionais": [
-        "Bacon",
-        "Cebola roxa"
+        "Cheddar"
       ],
-      "status": "Finalizado",
+      "status": "Solicitado",
       "id": 1
     }
   ]

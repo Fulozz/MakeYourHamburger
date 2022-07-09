@@ -11,7 +11,7 @@ export default {
 
 <style scoped>
 #footer{
-    height: 200px;
+    height: 100px;
     width: 100%;
     background-color: #222;
     border-top: 4px solid #111;
@@ -21,3 +21,6 @@ export default {
     justify-content: center;
 }
 </style>
+
+
+//

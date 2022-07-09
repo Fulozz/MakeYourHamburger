@@ -44,8 +44,8 @@ export default {
         }
     },
     methods: {
-        //Para chamar função usar o menuFunctions($event)
         
+        //Para chamar função usar o menuFunctions($event) 
         menuFunctions: function(e){
             var checkBox = document.getElementById("checkbox");
             if (checkBox.checked == true){
