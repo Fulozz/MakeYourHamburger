@@ -1,6 +1,6 @@
 <template>
     <div id="main-banner">
-        <h1>Burger Creator 3000</h1>
+        <h1>Make your Burger:</h1>
     </div>
 </template>
 
