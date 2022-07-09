@@ -87,6 +87,18 @@
       ],
       "status": "Solicitado",
       "id": 1
+    },
+    {
+      "nome": "Thiago Silva Andrade",
+      "carne": "Alcatra",
+      "pao": "Italiano Branco",
+      "opcionais": [
+        "Bacon",
+        "Salame",
+        "Cebola roxa"
+      ],
+      "status": "Solicitado",
+      "id": 2
     }
   ]
 }
