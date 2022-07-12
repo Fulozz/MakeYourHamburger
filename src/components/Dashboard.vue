@@ -134,6 +134,47 @@ export default {
 </script>
 
 <style scoped>
+  @media screen and (max-width: 600px) {
+    #burger-table{
+        max-width: 600px;
+        margin: 0 auto 0;
+    }
+    #burger-table-heading,
+    #burger-table-rows,
+    .burger-table-row{
+        display: table-cell;
+        vertical-align: inherit;
+    }
+
+    #burger-table-heading{
+        font-weight: bold;
+        padding: 12px;
+        border-bottom: 3px solid #333;
+    }
+    #burger-table-heading div,
+     .burger-table-row div{
+        width: 19%;
+    }
+
+    .burger-table-row{
+        width: 100%;
+        padding: 12px;
+        border-bottom: 1px solid #ccc;
+    }
+
+    #burger-table-heading .order-id,
+    .burger-table-row .order-number {
+        width: 5%;
+    }
+
+    select{
+        padding: 12px 6px;
+        margin-right: 12px;
+    }
+  }
+
+
+        /* 1080p*/
 
     #burger-table{
         max-width: 1200px;
