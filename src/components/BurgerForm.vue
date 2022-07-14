@@ -10,13 +10,14 @@
                 <div class="input-container">
                     <label for="pao">Escolha o pao:</label>
                     <select name="pao" id="pao" v-model="pao" required >
+                        <option value="default" selected hidden>Selecione seu pão:</option>
                         <option v-for="pao in paes" :key="pao.id" :value="pao.tipo"> {{ pao.tipo }} </option>
                     </select>
                 </div>
                 <div class="input-container">
                     <label for="carne">Escolha o carne do seu burger:</label>
                     <select name="carne" id="carne" v-model="carne" required>
-                        <option value="" selected > Selecione sua carne</option>
+                        <option value="default" selected hidden > Selecione sua carne</option>
                         <option v-for="carne in carnes" :key="carne.id" :value="carne.tipo"> {{ carne.tipo }}</option>
                     </select>
                 </div>
@@ -109,6 +110,7 @@ export default {
 </script>
 
 <style scoped>
+
     #burger-form{
         max-width: 400px;
         margin: 0 auto;
