@@ -64,7 +64,7 @@ export default {
 
 <style scoped>
 #footer{
-    height: 250px;
+    height: 200px;
     width: 100%;
     background-color: #222;
     border-top: 4px solid #111;
@@ -82,11 +82,17 @@ export default {
 .social-icon:hover{
     color: #FCBA03;
 }
+.social{
+  display: flex;
+  position: relative;
+  bottom: 20px;
+  justify-content: center;
+}
 .foot{
     text-align: center;
     justify-content: center;
 }
-#contact{
+.contact{
     color:#FCBA03 !important;
 }
 </style>

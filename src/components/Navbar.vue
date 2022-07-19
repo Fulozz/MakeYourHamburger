@@ -70,7 +70,7 @@ export default {
     #nav {
         background-color: #222;
         border-bottom: 4px solid #111;
-        padding: 5px 50px;
+        padding: 5px 200px;
         display: flex;
         justify-content: space-between;
         align-items: center;
