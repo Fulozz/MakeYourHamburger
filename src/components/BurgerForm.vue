@@ -32,12 +32,11 @@
                 <div class="input-container">
                     <input type="submit" class="submit-btn" value="Criar meu Burger!">
                 </div>
-                
-
             </form>
         </div>
     </section>
 </template>
+
 <script>
 import Message from '../Messages/Message.vue';
 

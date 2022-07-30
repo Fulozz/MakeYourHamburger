@@ -2,8 +2,9 @@
     <div id="main-banner">
         <h1>Make your Burger:</h1>
     </div>
-    
 </template>
+
+
 
 <script>
 
