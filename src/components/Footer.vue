@@ -56,6 +56,7 @@
 </footer>
 
 </template>
+
 <script>
 export default {
     name: "Footer"
@@ -84,9 +85,8 @@ export default {
 }
 .social{
   display: flex;
-  position: relative;
-  bottom: 20px;
   justify-content: center;
+  text-align: center;
 }
 .foot{
     text-align: center;

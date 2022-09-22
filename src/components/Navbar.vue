@@ -1,5 +1,6 @@
 <template>
     <section id="nav">
+        
         <router-link to="/">
         <img :src="logo" :alt="alt" id="logo">
         </router-link>
@@ -32,6 +33,7 @@
   </section>
 </template>
 
+
 <script>
 
 export default {
@@ -40,7 +42,6 @@ export default {
     data(){
         return{
             menuActive: false,
-            
         }
     },
     methods: {
@@ -66,11 +67,12 @@ export default {
 }
 </script>
 
+
 <style scoped>
     #nav {
         background-color: #222;
         border-bottom: 4px solid #111;
-        padding: 5px 200px;
+        padding: 5px 20%;
         display: flex;
         justify-content: space-between;
         align-items: center;
@@ -187,6 +189,7 @@ export default {
 
         #checkbox:checked ~ .line--top{
             transform: rotate(45deg);
+            opacity: 0;
         }
         #checkbox:checked ~ .line--middle{
             transform: translateX(16px);
@@ -194,8 +197,7 @@ export default {
         }
         #checkbox:checked ~ .line--bottom{
             transform: rotate(-45deg);
+            opacity: 0;
         }
-       
-
     }
 </style>

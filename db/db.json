@@ -79,25 +79,27 @@
   ],
   "burgers": [
     {
-      "nome": "PokiHenrico Asi'han Yang",
-      "carne": "Veggie burger",
-      "pao": "Italiano Branco",
+      "nome": "A",
+      "carne": "Alcatra",
+      "pao": "3 Queijos",
       "opcionais": [
-        "Cheddar"
+        "Bacon",
+        "Tomate",
+        "Pepino",
+        "Cebola roxa"
       ],
-      "status": "Em produção",
+      "status": "Solicitado",
       "id": 1
     },
     {
       "nome": "Thiago Silva Andrade",
-      "carne": "Alcatra",
-      "pao": "Italiano Branco",
+      "carne": "Veggie burger",
+      "pao": "Integral",
       "opcionais": [
         "Bacon",
-        "Tomate",
-        "Pepino"
+        "Salame"
       ],
-      "status": "Finalizado",
+      "status": "Solicitado",
       "id": 2
     }
   ]

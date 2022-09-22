@@ -99,7 +99,7 @@ export default {
             this.pao = "";
             this.opcionais = '';
 
-         }   
+        }   
     },
     mounted(){
         this.getIngredientes()
