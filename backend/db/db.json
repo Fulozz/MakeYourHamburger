@@ -88,19 +88,8 @@
         "Pepino",
         "Cebola roxa"
       ],
-      "status": "Solicitado",
+      "status": "Em produção",
       "id": 1
-    },
-    {
-      "nome": "Thiago Silva Andrade",
-      "carne": "Veggie burger",
-      "pao": "Integral",
-      "opcionais": [
-        "Bacon",
-        "Salame"
-      ],
-      "status": "Solicitado",
-      "id": 2
     }
   ]
 }

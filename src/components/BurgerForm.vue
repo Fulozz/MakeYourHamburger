@@ -104,12 +104,10 @@ export default {
     mounted(){
         this.getIngredientes()
     }
-
 }
 </script>
 
 <style scoped>
-
     #burger-form{
         max-width: 400px;
         margin: 0 auto;
@@ -145,7 +143,6 @@ export default {
         width: 50%;
         margin-bottom: 20px;
     }
-
     .checkbox-container span,
     .checkbox-container input{
         width: auto;
@@ -154,7 +151,6 @@ export default {
         margin-left: 6px;
         font-weight: bold;
     }
-
     .submit-btn{
         background-color: #222;
         color: #FCBA03;
@@ -167,7 +163,6 @@ export default {
         transition: .5s;
         border-radius: 5px;
     }
-
     .submit-btn:hover{
         background-color: transparent ;
         color: #222;
